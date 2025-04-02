@@ -54,13 +54,6 @@ export const TaskListTableDefault: React.FC<{
       }}
     >
       {tasks.map(t => {
-        let expanderSymbol = "";
-        if (t.hideChildren === false) {
-          expanderSymbol = "▼";
-        } else if (t.hideChildren === true) {
-          expanderSymbol = "▶";
-        }
-
         return (
           <div
             className={styles.taskListTableRow}
@@ -75,16 +68,6 @@ export const TaskListTableDefault: React.FC<{
               }}
             >
               <div className={styles.taskListNameWrapper}>
-                <div
-                  className={
-                    expanderSymbol
-                      ? styles.taskListExpander
-                      : styles.taskListEmptyExpander
-                  }
-                  onClick={() => onExpanderClick(t)}
-                >
-                  {expanderSymbol}
-                </div>
                 <div>{t.name.render?.(t) ?? t.name.text}</div>
               </div>
             </div>

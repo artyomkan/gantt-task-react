@@ -1,7 +1,7 @@
 import React from 'react';
 import {StoryObj} from '@storybook/react';
 import {Gantt} from "../components/gantt/gantt"
-import {ViewMode} from "../types/public-types";
+import {TaskType, ViewMode} from "../types/public-types";
 
 export default {
   title: 'Example/Gantt',
@@ -14,13 +14,13 @@ export const MainModal: Story = {
     return (
       <Gantt viewMode={ViewMode.Day} tasks={[{
         start: new Date(2020, 1, 1),
-        end: new Date(2020, 1, 2),
+        end: new Date(2020, 1, 3),
         name: {
           text: "Task 1Task 1Task 1Task 1",
           render: () => <div><button>123</button></div>
         },
         id: 'Task 0',
-        type:'task',
+        type: TaskType.Task,
         progress: 45,
         isDisabled: true,
         styles: { progressColor: '#ffbb54', progressSelectedColor: '#ff9e0d' },
