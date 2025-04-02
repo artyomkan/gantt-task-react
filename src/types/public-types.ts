@@ -1,3 +1,5 @@
+import React from "react";
+
 export enum ViewMode {
   Hour = "Hour",
   QuarterDay = "Quarter Day",
@@ -13,7 +15,10 @@ export type TaskType = "task" | "milestone" | "project";
 export interface Task {
   id: string;
   type: TaskType;
-  name: string;
+  name: {
+    text: string
+    render?: (item: Task) => React.ReactNode
+  }
   start: Date;
   end: Date;
   /**

@@ -73,7 +73,6 @@ export const TaskListTableDefault: React.FC<{
                 minWidth: rowWidth,
                 maxWidth: rowWidth,
               }}
-              title={t.name}
             >
               <div className={styles.taskListNameWrapper}>
                 <div
@@ -86,7 +85,7 @@ export const TaskListTableDefault: React.FC<{
                 >
                   {expanderSymbol}
                 </div>
-                <div>{t.name}</div>
+                <div>{t.name.render?.(t) ?? t.name.text}</div>
               </div>
             </div>
             <div
